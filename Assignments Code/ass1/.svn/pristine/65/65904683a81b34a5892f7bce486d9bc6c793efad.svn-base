@@ -1,0 +1,64 @@
+package vehicles;
+
+import exceptions.OverCapacityException;
+import passengers.Passenger;
+import routes.Route;
+import stops.Stop;
+
+import java.util.List;
+
+public abstract class PublicTransport {
+    protected int id;
+    protected int capacity;
+    protected Route route;
+    protected String type;
+    protected List<Passenger> passengers;
+    protected Stop currentStop;
+
+    public PublicTransport() {
+    }
+
+    public PublicTransport(int id, int capacity, Route route ) {
+        //EmptyRouteException thrown when a PublicTransport is added to a Route with no Stops.
+//    OverCapacityException thrown when a Passenger is added to a PublicTransport which has reached capacity. (i.e. PublicTransport.passengerCount() >= PublicTransport.getCapacity())
+        this.id = id;
+        this.capacity = capacity;
+        this.route = route;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public Route getRoute() {
+        return route;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public List<Passenger> getPassengers() {
+        return passengers;
+    }
+
+    public Stop getCurrentStop() {
+        return currentStop;
+    }
+
+    public void addPassenger(Passenger passenger) throws OverCapacityException {
+
+    }
+
+    public List<Passenger> unload() {
+        return passengers;
+    }
+
+    public void travelTo(Stop stop) {
+
+    }
+}

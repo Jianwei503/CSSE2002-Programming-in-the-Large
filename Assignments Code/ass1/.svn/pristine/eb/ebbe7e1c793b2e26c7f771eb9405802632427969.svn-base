@@ -1,0 +1,27 @@
+package vehicles;
+
+import routes.Route;
+
+import java.util.Objects;
+
+public class Ferry extends PublicTransport {
+    private String ferryType;
+    //    IncompatibleTypeException thrown when a subclass of PublicTransport is added to a Route for a different type of transport. i.e. Train added to BusRoute
+
+    public Ferry() {
+    }
+
+    public Ferry(int id, int capacity, Route route, String ferryType) {
+        super(id, capacity, route);
+        if (Objects.isNull(ferryType) || ferryType.isEmpty()) {
+            this.ferryType = "CityCat";
+        } else {
+            this.ferryType = ferryType.replaceAll(
+                    "\\r\\n|\\r|\\n","");
+        }
+    }
+
+    public String getFerryType() {
+        return ferryType;
+    }
+}

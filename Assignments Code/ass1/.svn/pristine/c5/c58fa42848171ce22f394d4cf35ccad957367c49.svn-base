@@ -1,0 +1,30 @@
+package vehicles;
+
+import routes.Route;
+
+import java.util.Objects;
+
+/**
+ *
+ */
+public class Bus extends PublicTransport{
+    private String registrationNumber;
+//    IncompatibleTypeException thrown when a subclass of PublicTransport is added to a Route for a different type of transport. i.e. Train added to BusRoute
+
+    public Bus() {
+    }
+
+    public Bus(int id, int capacity, Route route, String registrationNumber) {
+        super(id, capacity, route);
+        if ( Objects.isNull( registrationNumber ) ) {
+            this.registrationNumber = "";
+        } else {
+            this.registrationNumber = registrationNumber.replaceAll(
+                    "\\r\\n|\\r|\\n","");
+        }
+    }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+}

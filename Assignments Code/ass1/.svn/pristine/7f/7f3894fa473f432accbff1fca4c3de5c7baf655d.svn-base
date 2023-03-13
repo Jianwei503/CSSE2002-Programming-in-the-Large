@@ -1,0 +1,7 @@
+package stops;
+
+import static org.junit.Assert.*;
+
+public class StopTest {
+
+}

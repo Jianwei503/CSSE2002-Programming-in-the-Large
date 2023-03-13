@@ -1,0 +1,43 @@
+package stops;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class RoutingTable {
+
+    public RoutingTable(Stop initialStop) {}
+
+    public void addNeighbour(Stop neighbour) {}
+
+    public boolean addOrUpdateEntry(Stop destination,
+                                    int newCost,
+                                    Stop intermediate) {
+        return false;
+    }
+
+    public int costTo(Stop stop) {
+        return 1;
+    }
+
+    public java.util.Map<Stop,java.lang.Integer> getCosts() {
+        return new HashMap<>();
+    }
+
+    public Stop getStop() {
+        return new Stop("a", 1, 1);
+    }
+
+    public Stop nextStop(Stop destination) {
+        return new Stop("a", 1, 1);
+    }
+
+    public void synchronise() {}
+
+    public boolean transferEntries(Stop other) {
+        return false;
+    }
+
+    public java.util.List<Stop> traverseNetwork() {
+        return new ArrayList<>();
+    }
+}

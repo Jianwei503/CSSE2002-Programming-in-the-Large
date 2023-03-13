@@ -1,0 +1,20 @@
+package routes;
+
+import stops.Stop;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Route {
+//     Note that the given route should never be null (@require route != null), and thus will not be tested with a null value.
+    public Stop getStartStop() {
+        return new Stop();
+    }
+
+    public List<Stop> getStopsOnRoute() {
+        return new ArrayList<>();
+    }
+
+    public abstract String getType();
+    //EmptyRouteException thrown when a PublicTransport is added to a Route with no Stops.
+}

@@ -1,0 +1,50 @@
+package passengers;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class PassengerTest {
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+
+    @Test
+    public void getName() {
+    }
+
+    @Test
+    public void getDestination() {
+    }
+
+    @Test
+    public void setDestination() {
+    }
+
+    @Test
+    public void toString1() {
+    }
+
+    @Test
+    public void getName1() {
+    }
+
+    @Test
+    public void getDestination1() {
+    }
+
+    @Test
+    public void setDestination1() {
+    }
+
+    @Test
+    public void toString2() {
+    }
+}

@@ -1,0 +1,4 @@
+package passengers;
+
+public class ConcessionPassenger {
+}

@@ -1,0 +1,6 @@
+package exceptions;
+
+import java.io.Serializable;
+
+public class EmptyRouteException extends TransportException implements Serializable {
+}

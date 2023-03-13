@@ -1,0 +1,58 @@
+package routes;
+
+import exceptions.EmptyRouteException;
+import exceptions.IncompatibleTypeException;
+import stops.Stop;
+import vehicles.PublicTransport;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Route {
+    protected String name;
+    protected int routeNumber;
+
+    public Route(String name, int routeNumber) {
+    }
+
+    public String getName() {return name;}
+
+
+    public int getRouteNumber(){return 1;};
+    //EmptyRouteException thrown when a PublicTransport is added to a Route with no Stops.
+
+    public List<Stop> getStopsOnRoute() {
+        return new ArrayList<>();
+    }
+
+    public Stop getStartStop() throws EmptyRouteException {
+        return new Stop();
+    }
+
+    public void addStop(Stop stop) {}
+
+    public List<PublicTransport> getTransports() {return new ArrayList<>();}
+
+    public void addTransport(PublicTransport transport)
+            throws EmptyRouteException,
+            IncompatibleTypeException {
+
+    }
+
+    public abstract String getType();
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+}

@@ -1,0 +1,78 @@
+package vehicles;
+
+import exceptions.OverCapacityException;
+import passengers.Passenger;
+import routes.Route;
+import stops.Stop;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class PublicTransport {
+    protected int id;
+    protected int capacity;
+    protected Route route;
+    protected String type;
+    protected List<Passenger> passengers;
+    protected Stop currentStop;//If this vehicle is currently travelling between stops, then the current stop can be thought of as its destination (i.e. its next stop).
+
+    public PublicTransport() {
+    }
+
+    public PublicTransport(int id, int capacity, Route route ) {
+        this.id = id;
+        this.capacity = capacity;
+        this.route = route;
+        //Construct a new empty List for holding passengers.
+        List<Passenger> passengers = new ArrayList<>();
+        this.passengers = passengers;
+        //If route is not empty, place vehicle at the start stop of the route,
+        //otherwise set the currentStop as default(null).
+        if ( !route.getStopsOnRoute().isEmpty() ) {
+            this.currentStop = route.getStartStop();
+        }
+        this.type = route.getType();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public Route getRoute() {
+        return route;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public List<Passenger> getPassengers() {
+        return passengers;
+    }
+
+    public Stop getCurrentStop() {
+//        The stop this vehicle is currently located at, or null if it is not currently located at a stop.
+        return currentStop;
+    }
+
+    public void addPassenger(Passenger passenger) throws OverCapacityException {
+        //    OverCapacityException thrown when a Passenger is added to a PublicTransport which has reached capacity. (i.e. PublicTransport.passengerCount() >= PublicTransport.getCapacity())
+
+    }
+
+    public List<Passenger> unload() {
+        return passengers;
+    }
+
+    public void travelTo(Stop stop) {
+
+    }
+
+    public int passengerCount() {
+        return this.passengers.size();
+    }
+}

@@ -1,0 +1,16 @@
+package stops;
+
+public class RoutingEntry {
+
+    public RoutingEntry() {}
+
+    public RoutingEntry(Stop next, int cost) {}
+
+    public int getCost() {
+        return 1;
+    }
+
+    public Stop getNext() {
+        return new Stop("a", 1, 1);
+    }
+}
